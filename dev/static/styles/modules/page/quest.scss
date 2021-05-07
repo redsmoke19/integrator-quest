@@ -1,0 +1,8 @@
+.quest {
+  padding: 30px 40px;
+  &__title {
+    color: $text-dark-color;
+    font-size: 32px;
+    line-height: 42px;
+  }
+}

@@ -1,12 +1,13 @@
-@import "utils/libs";
-@import "utils/vars";
-@import "utils/mixins";
-@import "utils/fonts";
-@import "utils/sprite";
+@import 'utils/libs';
+@import 'utils/vars';
+@import 'utils/mixins';
+@import 'utils/fonts';
+@import 'utils/sprite';
+@import './modules/bootstrap/bootstrap.scss';
 //@include sprites($spritesheet-sprites);
 
 html {
-  font-family: 'Open Sans', Arial, serif;
+  font-family: $main-font;
   font-size: 16px;
   height: 100%;
 }

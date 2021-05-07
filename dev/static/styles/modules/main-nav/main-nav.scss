@@ -1,0 +1,43 @@
+.nav {
+  background-color: $bg-light-color;
+  height: 100%;
+  padding: 30px 15px;
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+  &__item {
+
+  }
+  &__link {
+    align-items: center;
+    color: $text-black-color;
+    display: flex;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    padding: 15px;
+    text-decoration: none;
+    transition: all ease-out 0.2s;
+    &:hover {
+      color: $text-green-color;
+      svg {
+        fill: $text-green-color;
+      }
+    }
+    &._active {
+      background-color: $white;
+      border-radius: 12px;
+      color: $text-green-color;
+      svg {
+        fill: $text-green-color;
+      }
+    }
+  }
+  &__icon {
+    fill: $text-black-color;
+    flex-shrink: 0;
+    margin: 0 12px 0 0;
+    transition: all ease-out 0.2s;
+  }
+}

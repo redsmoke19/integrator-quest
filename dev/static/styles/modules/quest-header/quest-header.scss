@@ -1,0 +1,40 @@
+.quest-header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  &__user-menu {
+    align-items: center;
+    background-color: $bg-light-color;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    padding: 12px;
+    transition: all ease-out 0.2s;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.user-list {
+  border-radius: 12px;
+  padding: 10px;
+  &__item {
+    &:not(:last-child) {
+      margin: 0 0 10px 0;
+    }
+  }
+  &__link {
+    color: $text-black-color;
+    display: block;
+    font-size: 14px;
+    line-height: 18px;
+    text-decoration: none;
+    transition: all ease-out 0.2s;
+    &:hover {
+      color: rgba($text-green-color, 0.6);
+    }
+  }
+}

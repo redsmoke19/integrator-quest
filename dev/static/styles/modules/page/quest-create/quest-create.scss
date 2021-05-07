@@ -1,0 +1,81 @@
+.quest-create {
+  &__sub-title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  &__input-box {
+    border: 1px solid rgba(51, 51, 51, 0.2);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+    padding: 12px 20px;
+  }
+  &__label {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    margin: 0 0 5px 0;
+  }
+  &__input, &__textarea {
+    border: none;
+    color: $text-dark-color;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 20px;
+    padding: 0;
+    &::placeholder {
+      opacity: 0.5;
+    }
+  }
+  &__textarea {
+    min-height: 90px;
+    resize: vertical;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.upload-file__input {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+  overflow: hidden;
+  width: 0.4px;
+  height: 0.4px;
+}
+
+.upload-file__label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 240px;
+  border: 2px dashed #150B22;
+  padding: 9px 49px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.upload-file__icon {
+  width: 30px;
+  height: auto;
+  margin-right: 11px;
+}
+
+.upload-file__label .upload-file__text,
+.upload-file__label .upload-file__icon path {
+  transition: .25s ease;
+}
+
+.upload-file__label:hover .upload-file__text {
+  color: #58862D;
+}
+
+.upload-file__label:hover .upload-file__icon path {
+  fill: #58862D;
+}
+
+.upload-file__label:hover {
+  border: 2px dashed #58862D;
+}

@@ -1,0 +1,27 @@
+nav.nav
+	.nav__wrapper
+		ul.nav__list
+			li.nav__item
+				a(href="#").nav__link
+					+icon('icon-user', 'nav__icon', '24', '24')
+					span.nav__link-text Пользователи
+			li.nav__item
+				a(href="#").nav__link
+					+icon('icon-case', 'nav__icon', '24', '24')
+					span.nav__link-text Мои квесты
+			li.nav__item
+				a(href="#").nav__link._active
+					+icon('icon-box', 'nav__icon', '24', '24')
+					span.nav__link-text Все квесты
+			li.nav__item
+				a(href="#").nav__link
+					+icon('icon-admin', 'nav__icon', '24', '24')
+					span.nav__link-text Администраторы
+			li.nav__item
+				a(href="#").nav__link
+					+icon('icon-stat', 'nav__icon', '24', '24')
+					span.nav__link-text Статистика
+			li.nav__item
+				a(href="#").nav__link
+					+icon('icon-tg', 'nav__icon', '24', '24')
+					span.nav__link-text Чат Telegram

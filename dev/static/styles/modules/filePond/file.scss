@@ -1,0 +1,85 @@
+.filepond--root {
+  font-family: $main-font;
+  margin-bottom: 0;
+  // width: 296px;
+}
+
+.quset-create__files, .create-list__files--audio, .create-list__files--image {
+  .filepond--label-action {
+    background-color: rgba(45, 45, 45, 0.05);
+    border-radius: 12px;
+    color: $text-green-color;
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    padding: 15px 40px;
+    text-decoration: none;
+  }
+  .filepond--list-scroller {
+    margin: 0;
+    position: relative;
+    transform: translate3d(0, 0, 0) !important;
+  }
+  .filepond--list {
+    left: auto;
+    position: relative;
+    right: auto;
+  }
+  .filepond--item-panel {
+    background-color: transparent;
+  }
+
+  [data-filepond-item-state='processing-complete'] .filepond--item-panel {
+    background-color:#b0f7d1;
+  }
+
+  [data-filepond-item-state*='invalid'] .filepond--item-panel,
+  [data-filepond-item-state*='error'] .filepond--item-panel {
+    background-color: #c44e47;
+  }
+  .filepond--item {
+    height: 46px;
+    margin: 0;
+    position: relative;
+    transform: translate3d(0, 0, 0) !important;
+    margin: 0 0 15px 0;
+  }
+  .filepond--file {
+    background-color: rgba(45, 45, 45, 0.05);
+  }
+  .filepond--drop-label {
+    display: block;
+    position: relative;
+    label {
+      padding: 0;
+    }
+  }
+  .filepond--file-status-sub {
+    display: none;
+  }
+  .filepond--action-process-item {
+    right: 50px;
+  }
+  .filepond--file-info-main {
+    color: $text-dark-color;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .filepond--file-info-sub {
+    color: $text-dark-color;
+  }
+  .filepond--file-status-main {
+    color: $black;
+  }
+  .filepond--file-action-button.filepond--file-action-button {
+    cursor: pointer;
+  }
+  .filepond--file-action-button:hover, .filepond--file-action-button:focus {
+    opacity: 0.6 !important;
+    box-shadow: none;
+  }
+  .filepond--drop-label {
+    min-height: 54px;
+  }
+}

@@ -3,15 +3,20 @@ template
 		.create-list__collapce
 			button.create-list__drop(data-bs-toggle="collapse" data-bs-target="#createQuestItem1" aria-expanded="false" aria-controls="createQuestItem1")
 				+icon('icon-arrow-drop', 'create-list__icon', '14', '9')
-			h3.create-list__title Задание 1
+			.col-auto.d-flex.align-items-center
+				span.create-list__new Добавить новое
+				h3.create-list__title Задание 1
+				p.create-list__error Есть ошибки
+					span.badge.bg-danger.ms-10 3
 			button.create-list__delete.ms-auto
 				+icon('icon-delete', 'create-list__icon', '24', '24')
 		.collapse(id="createQuestItem1")
 			.row.pt-32
 				.col-12.mb-16
-					.quest-create__input-box
-						label.quest-create__label._js-create-name-label(for="createQuestItemName1") Название места
-						input.quest-create__input._js-create-name-input(type="text" name="createQuestItemName1" id="createQuestItemName1" placeholder="Введите название задания")
+					.quest-create__error-message Данное полне не должно быть пустым
+					.quest-create__input-box._error
+						label.quest-create__label._js-create-name-label._error(for="createQuestItemName1") Название места
+						input.quest-create__input._js-create-name-input._error(type="text" name="createQuestItemName1" id="createQuestItemName1" placeholder="Введите название задания")
 					.quest-create__input-box
 						label.quest-create__label._js-create-desk-label(for="createQuestItemDesk1") Описание действий
 						textarea.quest-create__textarea._js-create-desk-textarea(type="text" name="createQuestItemDesk1" id="createQuestItemDesk1" placeholder="Введите описание задания")
@@ -37,11 +42,13 @@ template
 					.row
 						.col-12
 							input.create-list__files--audio(type="file")
-				.col-12
+				.col-12.mb-32
 					h4.create-list__sub-title Изображение
 					.row
 						.col-12
 							input.create-list__files--image(type="file")
+				.col-12
+					button.quest-create__submit Добавить задание
 
 ul.create-quest__list.create-list
 	li.create-list__item
@@ -82,11 +89,13 @@ ul.create-quest__list.create-list
 					.row
 						.col-12
 							input.create-list__files--audio(type="file")
-				.col-12
+				.col-12.mb-32
 					h4.create-list__sub-title Изображение
 					.row
 						.col-12
 							input.create-list__files--image(type="file")
+				.col-12
+					button.quest-create__submit Сохранить задание
 	li.create-list__item
 		.create-list__collapce
 			button.create-list__drop(data-bs-toggle="collapse" data-bs-target="#createQuestItem1" aria-expanded="false" aria-controls="createQuestItem1")
@@ -125,11 +134,13 @@ ul.create-quest__list.create-list
 					.row
 						.col-12
 							input.create-list__files--audio(type="file")
-				.col-12
+				.col-12.mb-32
 					h4.create-list__sub-title Изображение
 					.row
 						.col-12
 							input.create-list__files--image(type="file")
+				.col-12
+					button.quest-create__submit Сохранить задание
 	li.create-list__item
 		.create-list__collapce
 			button.create-list__drop(data-bs-toggle="collapse" data-bs-target="#createQuestItem1" aria-expanded="false" aria-controls="createQuestItem1")
@@ -168,9 +179,11 @@ ul.create-quest__list.create-list
 					.row
 						.col-12
 							input.create-list__files--audio(type="file")
-				.col-12
+				.col-12.mb-32
 					h4.create-list__sub-title Изображение
 					.row
 						.col-12
 							input.create-list__files--image(type="file")
+				.col-12
+					button.quest-create__submit Сохранить задание
 button.create-list__add-task + Добавить задание

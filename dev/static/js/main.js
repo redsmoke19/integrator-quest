@@ -134,22 +134,22 @@
       item.querySelector('.create-list__drop').setAttribute('aria-controls', `createQuestItem${index + 1}`);
       item.querySelector('.collapse').setAttribute('id', `createQuestItem${index + 1}`);
       item.querySelector('._js-create-name-label').setAttribute('for', `createQuestItemName${index + 1}`);
-      item.querySelector('._js-create-name-input').setAttribute('name', `createQuestItemName${index + 1}`);
+      // item.querySelector('._js-create-name-input').setAttribute('name', `createQuestItemName${index + 1}`);
       item.querySelector('._js-create-name-input').setAttribute('id', `createQuestItemName${index + 1}`);
       item.querySelector('._js-create-desk-label').setAttribute('for', `createQuestItemDesk${index + 1}`);
-      item.querySelector('._js-create-desk-textarea').setAttribute('name', `createQuestItemDesk${index + 1}`);
+      // item.querySelector('._js-create-desk-textarea').setAttribute('name', `createQuestItemDesk${index + 1}`);
       item.querySelector('._js-create-desk-textarea').setAttribute('id', `createQuestItemDesk${index + 1}`);
       item.querySelector('._js-create-answer-label').setAttribute('for', `createQuestItemAnswer${index + 1}`);
-      item.querySelector('._js-create-answer-input').setAttribute('name', `createQuestItemAnswer${index + 1}`);
+      // item.querySelector('._js-create-answer-input').setAttribute('name', `createQuestItemAnswer${index + 1}`);
       item.querySelector('._js-create-answer-input').setAttribute('id', `createQuestItemAnswer${index + 1}`);
       item.querySelector('._js-create-map-first-label').setAttribute('for', `createQuestMapFirst${index + 1}`);
-      item.querySelector('._js-create-map-first-input').setAttribute('name', `createQuestMapFirst${index + 1}`);
+      // item.querySelector('._js-create-map-first-input').setAttribute('name', `createQuestMapFirst${index + 1}`);
       item.querySelector('._js-create-map-first-input').setAttribute('id', `createQuestMapFirst${index + 1}`);
       item.querySelector('._js-create-map-second-label').setAttribute('for', `createQuestMapSecond${index + 1}`);
-      item.querySelector('._js-create-map-second-input').setAttribute('name', `createQuestMapSecond${index + 1}`);
+      // item.querySelector('._js-create-map-second-input').setAttribute('name', `createQuestMapSecond${index + 1}`);
       item.querySelector('._js-create-map-second-input').setAttribute('id', `createQuestMapSecond${index + 1}`);
-      item.querySelector('.create-list__files--audio').setAttribute('name', `createQuestAudio${index + 1}`);
-      item.querySelector('.create-list__files--image').setAttribute('name', `createQuestImage${index + 1}`);
+      // item.querySelector('.create-list__files--audio').setAttribute('name', `createQuestAudio${index + 1}`);
+      // item.querySelector('.create-list__files--image').setAttribute('name', `createQuestImage${index + 1}`);
     }
 
     function getPointMap(item) {
@@ -195,29 +195,42 @@
       const questItems = document.querySelectorAll('.create-list__item');
       if (questItems.length < 0) return;
       questItems.forEach((item, i) => {
-        getCurrentValueQuestItems(item, i);
+        // getCurrentValueQuestItems(item, i); // Тут происходит обновление всех интексов при удалении одного из пунктов
       });
     }
 
     function getItem() {
       const questElement = template.cloneNode(true);
-      const deleteButton = questElement.querySelector('.create-list__delete');
+      // const deleteButton = questElement.querySelector('.create-list__delete');
       const questLenght = document.querySelectorAll('.create-list__item').length;
-      deleteButton.addEventListener('click', function () {
-        getDeleteItem(questElement);
-      });
+      questElement.querySelector('.create-list__files--audio').setAttribute('name', 'audio');
+      questElement.querySelector('.create-list__files--image').setAttribute('name', 'image');
+      questElement.classList.add('_added');
+      questElement.style.display = 'none';
+      // deleteButton.addEventListener('click', function () {
+      //   getDeleteItem(questElement);
+      // });
       getCurrentValueQuestItems(questElement, questLenght);
       setUploadElements(questElement);
       getPointMap(questElement);
       return questElement;
     }
     const fragment = document.createDocumentFragment();
-    addButton.addEventListener('click', function () {
+    document.addEventListener('DOMContentLoaded', () => {
       fragment.append(getItem());
       elementsList.append(fragment);
     });
+    addButton.addEventListener('click', function () {
+      const addedElement = addButton.previousSibling.querySelector('._added');
+      addedElement.querySelector('.collapse').classList.add('show');
+      addedElement.classList.remove('_added');
+      addedElement.style.display = 'block';
+      addButton.style.display = 'none';
+      // fragment.append(getItem());
+      // elementsList.append(fragment);
+    });
   };
   getFilesUpload();
-  getMap();
+  // getMap();
   getQuestItem();
 })();

@@ -39,10 +39,33 @@
     padding: 0;
     width: 24px;
   }
+  &__new {
+    align-items: center;
+    color: $text-green-color;
+    display: flex;
+    position: relative;
+    &::after {
+      content: '\2192';
+      margin: 0 0 0 5px;
+    }
+  }
   &__title {
     font-size: 20px;
     line-height: 28px;
     margin: 0 0 0 10px;
+  }
+  &__error {
+    align-items: center;
+    color: $danger;
+    display: flex;
+    font-size: 12px;
+    line-height: 14px;
+    margin: 0 0 0 10px;
+    position: relative;
+    &::before {
+      content: '\2190';
+      margin: 0 5px 0 0;
+    }
   }
   &__sub-title {
     font-size: 18px;
